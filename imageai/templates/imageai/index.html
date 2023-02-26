@@ -1,0 +1,48 @@
+{% extends 'imageai/base.html' %}
+{% block title %}DeepImFam{% endblock %}
+
+{% block content %}
+<!-- <div class="alert">
+    <td><h1 class="mt-4 mb-5 border-top">DeepImFam</h1></td>
+    <br>
+    <p class="custom-class">画像ファイルを選択して推定ボタンを押してください。</p>
+    <br>
+    <form action="{% url 'imageai:predict' %}"  method="post" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="custom-file">
+                {{ form.image }}
+                <label class="custom-file-label" for="customFile">
+                    推定したいファイルを選択してください
+                </label>
+            </div>
+        </div>
+        <br>
+        <div class="btn-wrapper">
+            <button type="submit" class="btn btn-secondary btn-lg btn-block">推定スタート</button>
+        </div>
+    </form>
+</div>
+<br></br> -->
+<td><h1 class="mt-4 mb-5 border-top index-title">DeepImFam</h1></td>
+<br><br>
+<div class="alert alert-primary" role="alert">
+    <strong>Gタンパク質</strong>のアミノ酸配列を入力してください。
+</div>
+<br>
+<!-- <form class="form-group" action="{% url 'imageai:predict' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary">
+</form> -->
+<!--form action="{% url 'imageai:predict' %}" method="post"-->
+<form class="form-group" action="{% url 'imageai:predict' %}" method="get">
+  {% csrf_token %}
+  <div class="form-group">
+    <!-- <label for="aa_seq">Gタンパク質アミノ酸配列</label> -->
+    <input type="text" class="form-control" name="aa_seq">
+  </div>
+  <input type="submit" class="btn btn-primary">
+</form>
+  
+{% endblock %}

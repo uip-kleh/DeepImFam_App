@@ -1,0 +1,56 @@
+{% extends 'imageai/base.html' %}
+{% block title %}DeepImFamの概要{% endblock %}
+
+{% block content %}
+<td><h1 class="mt-4 mb-5 border-top index-title">DeepImFamの概要</h1></td>
+<h3>実行手順</h3>
+<ol>
+    <li>Homeからアミノ酸配列を入力する</li>
+    <li>アミノ酸配列のグラフ表示画像を作成する</li>
+    <li>グラフ表示画像からタンパク質ファミリー分類を行う</li>
+</ol>
+<br>
+<!-- <h3>研究紹介</h3>
+<h4>アミノ酸のグラフ表示画像作成</h4>
+<ul>
+    <li>BIASPROFSが提供している<a href="https://www.cs.kent.ac.uk/projects/biasprofs/">GPRCデータセット</a>を用いた</li>
+    <li>アミノ酸の指標を用いて、アミノ酸に独自のアミノ酸のベクトルを割り当てた</li>
+    <ul>
+        <li><a href="https://www.genome.jp/entry/aaindex:DAWD720101">アミノ酸の大きさ</a></li>
+        <li><a href="https://www.genome.jp/entry/aaindex:JURD980101">アミノ酸の疎水性度</a></li>
+    </ul>
+    <li>アミノ酸配列とアミノ酸のベクトルを用いてグラフ表示画像を作成した</li>
+</ul>
+<h4>グラフ表示画像の学習</h4>
+<ul>
+    <li>上記で作成した画像を用いて機械学習を行った</li>
+    <li>タンパク質ファミリーの多クラス分類タスク</li>
+</ul>
+<br> -->
+
+<h3>モデル性能</h3>
+<ul>
+    <li>交差検証</li>
+    <ul>
+        <li>Accuracy</li>
+        <li>F1-score</li>
+    </ul>
+    <li>テストデータを用いた結果</li>
+</ul>
+<table class="table about-tb">
+    <thead class="thead-dark">
+      <tr>
+        <th>Accuracy</th>
+        <th>F1-score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0.9637</td>
+        <td>0.7991</td>
+      </tr>
+    </tbody>
+  </table>
+DeepImFamのソースコードや論文は<a href='https://github.com/yasuak1/DeepImFam'>GitHub</a>から参照できる。
+<br><br><br>
+{% endblock %}

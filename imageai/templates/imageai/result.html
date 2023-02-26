@@ -1,0 +1,31 @@
+{% extends "imageai/base.html" %}
+{% block title %}タンパク質ファミリー推定{% endblock %}
+
+{% block content %}
+<!-- <div class="result">
+  <h4 class="mt-4 mb-5 boder-bottom">画像推定結果</h4>
+  <table class="table">
+      <p class="body-wrapper">ファイル名:{{photo_name}}</p>
+
+      <h2>画像ファイル<h2>
+      <img class="preview-img" src={{photo_data}}></img>
+
+      <p>動物名:{{predicted}}</p>
+      <p>推定確率:{{percentage}} %</p>
+
+  </table>
+  <br>
+
+  <a href="{% url 'imageai:index' %}" class="btn btn-primary btn-lg btn-block">選択メニューに戻る</a>
+
+</div> -->
+<!--p>アミノ酸配列： {{ aaseq }}</p-->
+<div class='result'>
+  <div class='container-fluid'>
+    <img src="data:image/png; base64, {{ graph | safe }}" class="aaimg">
+    <p>Family:{{ pred_label }} ( {{ percentage }}% )</p>
+    <p>Sub-Family:{{ pred_sub_label }} ( {{ percentage_sub }} %)</p>
+    <p>Sub-SubFamily:{{ pred_subsub_label }} ( {{ percentage_subsub }} %)</p>
+  </div>
+</div>
+{% endblock %}

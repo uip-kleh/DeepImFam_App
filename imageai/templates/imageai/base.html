@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    {% load bootstrap4 %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% bootstrap_javascript jquery="full" %}
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <!-- content -->
+  <body>
+    <!-- ナビゲーションバー -->
+    <header>
+      <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <a class="navbar-brand navbar-title" href="{% url 'imageai:index' %}">DeepImFam</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportContent" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'imageai:index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'imageai:about' %}">About</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'imageai:contact' %}">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted"><small>&copy;</small>iup-kleh</p>
+      </div>
+    </footer>
+  </body>
+</html>
